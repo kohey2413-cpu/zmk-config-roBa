@@ -15,22 +15,10 @@
 };
 
 / {
-    // 【スケーリングノードの追加】
-    trackball_scaling: trackball_scaling {
-        compatible = "zmk,input-processor-scale-xy";
-        #input-processor-cells = <0>;
-        x-scale = <200>;
-        y-scale = <100>;
-        
-    };
-
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
-        // 以下の行を追記:
-        input-processors = <&trackball_scaling>;
     };
 };
 
